@@ -14,6 +14,18 @@ My approach to gardening tools is
 
 
 
+# TO DO: #
+
+- [x] GHOUST movement
+- [x] Item Pick Up
+- [ ] Shovel
+- [ ] Watering Can
+- [ ] Plant progression
+- [ ] Slugs enemy?
+- [ ] Point system
+- [ ] Timer?
+
+
 # Declered assets #
 
 
