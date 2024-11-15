@@ -9,3 +9,7 @@ Ihor Syvanenko
 
 ## Project Overview
 
+
+
+Assets:
+https://skolaztika.itch.io/dark-elegance-renpy-gui
