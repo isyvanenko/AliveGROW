@@ -173,7 +173,8 @@ And the last event in the **BP_Plant** is CheckProgress which will check if the 
 
 ###  **Tools functionality**
 
-No we are super close to the finish line I just need to implement the tools functinality. So the first think I did was to create the Input Action **IA_UseTool** I assigned the left mouse click to this action. Then I added it to the **BP_FirstPersonCharacter** and on started action it get actors of class **BP_Plant** and for each loop it cast to the **BP_Plant** checks if the *Current tool* is either BP_WateringCan, BP_Shovel or BP_Secateus and then activates corisponding function **UseWateringCan, UseShovel, UseSecateus**, and than set the *Watered?, Shoveled?, Scissors Used? bool in **BP_Plant** to *TRUE*. 
+No we are super close to the finish line I just need to implement the tools functinality. So the first think I did was to create the Input Action **IA_UseTool** "Input Actions are the communication link between the Enhanced Input system and your project's code." Enhanced Input in Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine (Accessed  02/12/2024).
+ I assigned the left mouse click to this action. Then I added it to the **BP_FirstPersonCharacter** and on started action it get actors of class **BP_Plant** and for each loop it cast to the **BP_Plant** checks if the *Current tool* is either BP_WateringCan, BP_Shovel or BP_Secateus and then activates corisponding function **UseWateringCan, UseShovel, UseSecateus**, and than set the *Watered?, Shoveled?, Scissors Used? bool in **BP_Plant** to *TRUE*. 
 
 **Here is the blueprint:**
 <iframe src="https://blueprintue.com/render/vn932kcc/" scrolling="no" allowfullscreen></iframe>
@@ -190,7 +191,46 @@ So what hapens in this function is that we input the plant that we have succesfu
 
 When the main gameloop was completed I made a UI menu, win and lose screen. For the concept of my game I decided to go with Flipbook actor. "Each Flipbook Component instance can specify a custom color that will be passed down to the Flipbook Material as a Vertex Color." Flipbook Components in Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/en-us/unreal-engine/flipbook-components-in-unreal-engine (Accessed  01/11/2024).
 
-I created my Flipbooks in the Procreate and created amterials with them as well to make my UI aimated. 
+I created my Flipbooks in the Procreate and created materials with them as well to make my UI aimated. Why have I choosen Flipbook? Because it's a good way to show a stop motion effect like an old cartoon. 
+
+##  **Playtesting**
+
+When my game was in playable test I asked my fellow classmates to play test it. They all gave their consent and permission for me to film them. Here is the video of them playing the game:
+
+https://youtu.be/BDejTYlSl6g **<- watch this** 
+
+Generic feedback was to improve the to improve player movement and UI because testers didn't know where to go and what to do.
+
+After I fixed all of the issues I gave my friends a chance to play the new virsion of the game. Unfortunatly, I didn't get their concept to film them but their feedback was:
+
+* Amelia: *"Love the concept, the game feels very nice, althought the enviroment doesn't much the idea, but I liked the game in general."*
+
+* Nadia *"Being a ghost is cool, maybe make like a flying plazma particle, like the after glow, to make sure player knows their are a ghoust. But in general I liked the game"*.
+
+After anylizing feedback I changed what I could and know in what direction I should be moving to improve this project fether. 
+
+##  **New skills**
+
+This project helped me to get to used to Unreal Engine Blueprints, as well as working with Unreal Engine Niagara FX system, at the beggining it was very hard to get my head around it, but after couple of tries and fails I was able to achiave quite a lot. Also, it was very helpulf to look at the Unreal documtation and ask AI models to help me understand blueprints better and how my knowleage of c# can be used to work Unreal Engine Blueprints. 
+
+It was also great to ask my tutor Assad for feedback and help with my blueprints, because my knowleage of the engine was pretty low I was over engineering everything, Assad helped me to make everything work better and at the same time look proffesinal.
+
+## Outcome
+
+
+- [Example Video Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
+- [Graveyard Bloom REP](https://github.com/isyvanenko/Graveyard_Bloom.git)
+- [Example Build Link](https://samperson.itch.io/desktop-goose)
+
+
+
+## Critical Reflection
+
+### What did or did not work well and why?
+
+
+
+### What would you do differently next time?
 
 
 
@@ -208,11 +248,19 @@ I created my Flipbooks in the Procreate and created amterials with them as well 
 
 
 
+## Bibliography
+
+Flipbook Components in Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/en-us/unreal-engine/flipbook-components-in-unreal-engine (Accessed  01/11/2024).
+
+Enhanced Input in Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine (Accessed  01/12/2024).
+
+BP_Plant was made with a help of Chat GPT 5.0 mini
+
+Enhanced Input in Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine (Accessed  01/11/2024).
 
 
 
-
-Assets:
+## Declared Assets
 
 Hedge shears from Sketchfab - The best 3D viewer on the web (2020) At:https://sketchfab.com/3d-models/hedge-shears-0019c537f5884ce08907a07e72bd3b64https://sketchfab.com/3d-models/hedge-shears-0019c537f5884ce08907a07e72bd3b64 (Accessed  01/11/2024).
 
@@ -226,13 +274,5 @@ New Rocker (s.d.) At: https://fonts.google.com/specimen/New+Rocker (Accessed  01
 
 Flower star icon, SVG and PNG | Game-icons.net (s.d.) At: https://game-icons.net/1x1/delapouite/flower-star.html (Accessed  01/11/2024).
 
-Planets - A 3D model collection by baxterbaxter (2022) At: https://sketchfab.com/baxterbaxter/collections/planets-82b7abd4e0644304b65fdc5af7d0aa72 (Accessed  02/12/2024).
+Stylized Plant Pack by Marbles studio (2022) At: https://skfb.ly/oBWK8 (Accessed  01/11/2024).
 
-
-
-
-
-
-
-
-https://skolaztika.itch.io/dark-elegance-renpy-gui
