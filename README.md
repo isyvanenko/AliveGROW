@@ -31,14 +31,16 @@ Counting that I didn't have much programming experience in Unreal Engine I would
 
 ## Implementation 
 
-####  **Movement**
+###  **Movement**
 For this project I decided to go with the first person template since, ghost don't have arms and body I set the arms of the template as **not visiable** and to better understand what I can change in the player movement componwent I looked in to the Unreal Engine documentation. Character Movement Component | Unreal Engine 4.27 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/en-us/unreal-engine/networking-and-multiplayer-in-unreal-engine  
 
 Here I was able to learn that I can modify the walk speed, velocity, gravity to make my character apear as they are floating. Here is a short video showcasing the movement:
 
-https://youtu.be/he965XDY6oM <- watch this
+https://youtu.be/he965XDY6oM **<- watch this**
 
-####  **Tools implementation**
+---
+
+###  **Tools implementation**
 
 So I started from searching 3D assets on Sketchfab and I found 3 great 3D models that I dowloaded. I had to modify the the watering can model in blender as well as shears to make sure they're sharing the same material. 
 
@@ -56,8 +58,18 @@ I had to create a couple of variables in player controller such as **CurrentTool
 
     DropTool -> Detach from the Actor (current tool) -> Set Current tool 
 
-Here is the blueprint:
+**Here is the blueprint:**
 <iframe src="https://blueprintue.com/render/wvyg295q/" scrolling="no" allowfullscreen></iframe>
+
+When that was done, I had to find the way to call this function, and the best way to do it is to call it from tools directly. So, what I did is that I added a sphere collider to the **BP_GardeningTools** that will be shared to all tools. And now I can do the function that would check if player is a apriximetry and if they are call **PickUpTool** function. 
+
+**Here is the blueprint:**
+<iframe src="https://blueprintue.com/render/uxp7_wa8/" scrolling="no" allowfullscreen></iframe>
+
+And will all that polishing that testing I had my core mechanic ready. And here is the video showing the pick up/drop off:
+
+
+
                         
 
 
