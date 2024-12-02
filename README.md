@@ -173,6 +173,26 @@ And the last event in the **BP_Plant** is CheckProgress which will check if the 
 
 ###  **Tools functionality**
 
+No we are super close to the finish line I just need to implement the tools functinality. So the first think I did was to create the Input Action **IA_UseTool** I assigned the left mouse click to this action. Then I added it to the **BP_FirstPersonCharacter** and on started action it get actors of class **BP_Plant** and for each loop it cast to the **BP_Plant** checks if the *Current tool* is either BP_WateringCan, BP_Shovel or BP_Secateus and then activates corisponding function **UseWateringCan, UseShovel, UseSecateus**, and than set the *Watered?, Shoveled?, Scissors Used? bool in **BP_Plant** to *TRUE*. 
+
+**Here is the blueprint:**
+<iframe src="https://blueprintue.com/render/vn932kcc/" scrolling="no" allowfullscreen></iframe>
+
+Now I want to talk about the **UseWateringCan, UseShovel, UseSecateus** this are the function that are directly present in the BP_WateringCan, BP_Shovel or BP_Secateus. In my development I will only talk about the **UseWateringCan** since other 2 functions are same. 
+
+So what hapens in this function is that we input the plant that we have succesfullt casted to and then check is the plant *Watered?* if not we check again if plant is valid and -1 from the plant *progress* varibale. (Reminder, we have *Progress* 3 wheere 3 is plant is in need of an action and 0 plant is completed). Then we play the Watering sound (*that was made by me*) and triggers the **Check Progress** event that we talked prior. 
+
+
+**Here is the blueprint:**
+<iframe src="https://blueprintue.com/render/091au0ou/" scrolling="no" allowfullscreen></iframe>
+
+###  **UI and Polishing**
+
+When the main gameloop was completed I made a UI menu, win and lose screen. For the concept of my game I decided to go with Flipbook actor. "Each Flipbook Component instance can specify a custom color that will be passed down to the Flipbook Material as a Vertex Color." Flipbook Components in Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/en-us/unreal-engine/flipbook-components-in-unreal-engine (Accessed  01/11/2024).
+
+I created my Flipbooks in the Procreate and created amterials with them as well to make my UI aimated. 
+
+
 
 
 
