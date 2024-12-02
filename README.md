@@ -119,12 +119,64 @@ On this stage I also decided to add a crosshair to make sure my player can see w
 **Here is the blueprint:**
 <iframe src="https://blueprintue.com/render/90q1-hzq/" scrolling="no" allowfullscreen></iframe>
 
+Also, because player can fall down I needed to implement a function that would teleport player back to spawn point and dedict some points from them. So I created **BP_DeadZone** which is an emphty actor which has a box collider. What happens is
+
+        On Box collider begin overlap -> Player? -> Set Actor Transform (Player ) to New Transform -> Get Actor of class BP_Timer -> Remove Time -> Create W_PlayerFelt widget -> Add to Viewport -> Player Felt Anim
+
+Simply saying what happens is that the player gets teleported to assigned position and we removing time from **BP_Timer** timer class to procude the **Remove Time** function and adding widget to notify player about the lost time and plays animation from the widget.
+
+**Here is the blueprint:**
+<iframe src="https://blueprintue.com/render/d95qaozm/" scrolling="no" allowfullscreen></iframe>
 
 Video showcase:
 
 https://youtu.be/p7ATVMGFMz4 **<- watch this** 
 
-###  **Timer + Extra Time pick ups**
+###  **Plants system**
+
+When I done with timer, enviroment and tools pickup. I started to work on Plants, as they are the key concept of the game. I looked for assets for my plants on sketfab and I found this amazing pack: Planets - A 3D model collection by baxterbaxter (2022) At: https://sketchfab.com/baxterbaxter/collections/planets-82b7abd4e0644304b65fdc5af7d0aa72. I started my development by thibking what I was from BP_Plants.
+
+**Static mesh of a plant - Keep track of a progress - Play particle effects and sounds when something happens - Show what needs to be done to them** 
+
+Starting from the basics of creating the **BP_Plant** adding a *Static mesh* for plant 3D model, Sphere collider to make sure player can interact with the plants only when they are close enough to the **BP_Plant**, Adding sounds Cues of Success/Fail, also I was researching in to the way how can I show the steps that needs to be taken towards every plant separetly. For example, some plants need water, other shovels. I did a research on this mater and found a builbord component. ArtStation - Billboard Material Function - Unreal Engine (2023) At: https://www.artstation.com/blogs/briz/63n8/billboard-material-function-unreal-engine (Accessed  01/11/2024).
+
+So, I draw my own sprites in Procreate a put them as a billboard on top of the plant static mesh, as well as an arrow that would indicate where the plant is and what plants need doing and which one were already done.
+
+Blueprint breakdown:
+
+        CheckIfAllDone -> Branch 
+        [X]E Has Been Wat / -> TRUE -> Destroy Component (Watering Can billboard) -> Success Visual Audio Function*
+            [X]E Has Been Sci / -> TRUE -> Destroy Component (Watering Can billboard) -> Success Visual Audio Function*
+                     [X] Has Been Shov / -> TRUE -> Destroy Component (Watering Can billboard) -> Success Visual Audio Function*
+                    
+What this function does is that checks what have been done to the plant, for example when plant *has been watared* we **remove** watering can billboard + plays the the success audio and institutes a particle to represent that. 
+
+**Here is the blueprint:**
+<iframe src="https://blueprintue.com/render/m5e2xszq/" scrolling="no" allowfullscreen></iframe>
+
+Then I also created a custom event **AlredyBeenDone** which checks if shovel, scissors, watering can, have been already used. If it has been used already the blueprint would create a widget **W_AlredyBeenUsed** which will have a custom binded text in the animation. 
+
+        Alredy Been Done -> True -> Alredy Done Visual Audio -> can be used again(yes) -> TRUE -> set can be used again (no) -> Create a W_AlredyBeenUsed -> in W_AlredyBeenUsed set Used text -> Add to Viewport -> NotifyPlayer anim -> Delay 6.0s -> SET can be used again (yes)
+        []Shovel
+        []Scissors
+        []WateringCan
+
+**Here is the blueprint:**
+<iframe src="https://blueprintue.com/render/v597v4g_/" scrolling="no" allowfullscreen></iframe>
+
+And the last event in the **BP_Plant** is CheckProgress which will check if the progress on the plant went from 3 to 0 meaning the plant is completed. What happens is:
+
+            IF Progress <= 0 -> Destroy Component (Player Proximity) -> Destroy Component (Billboard arrow) -> Get Actor of  Class BP_WinManager -> Adds +1 to progresstoWIN to the WinManager 
+
+**Here is the blueprint:**
+<iframe src="https://blueprintue.com/render/xhikkoyu/" scrolling="no" allowfullscreen></iframe>
+
+###  **Tools functionality**
+
+
+
+
+
 
 
 
@@ -153,6 +205,9 @@ Stylized Fantasy Skymap Environment - Modular Open world Skymap (s.d.) At: https
 New Rocker (s.d.) At: https://fonts.google.com/specimen/New+Rocker (Accessed  01/11/2024).
 
 Flower star icon, SVG and PNG | Game-icons.net (s.d.) At: https://game-icons.net/1x1/delapouite/flower-star.html (Accessed  01/11/2024).
+
+Planets - A 3D model collection by baxterbaxter (2022) At: https://sketchfab.com/baxterbaxter/collections/planets-82b7abd4e0644304b65fdc5af7d0aa72 (Accessed  02/12/2024).
+
 
 
 
