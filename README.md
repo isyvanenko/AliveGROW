@@ -226,23 +226,9 @@ It was also great to ask my tutor Assad for feedback and help with my blueprints
 
 ## Critical Reflection
 
-### What did or did not work well and why?
+It was hard to make a full game concept in the new engine that I hadn't used before. But with the use of documentation and AI models, I was able to achieve a great result. I think the core gameplay that I made is interesting and playable. I think what would need to be improved is my optimizations, because of the lack of knowledge I was casting a lot instead of using custom events. When I realised that my game was running slow and I was to optimize the code it was pretty hard because I had to rewrite a lot of the ground up. 
 
-
-
-### What would you do differently next time?
-
-
-
-
-
-
-
-
-
-                           
-
-
+The next I have a project like this I will be more prepared because I now know a lot of functions, I also would research into the documentation better than I did this time. Also, maybe I would join a group of others to spread the workload and produce a better product. 
 
 
 
