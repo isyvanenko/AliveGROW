@@ -218,7 +218,7 @@ It was also great to ask my tutor Assad for feedback and help with my blueprints
 ## Outcome
 
 
-- [Example Video Link](https://youtu.be/V82Bseexc6Y)
+- [Graveyard Bloom Gameplay](https://youtu.be/V82Bseexc6Y)
 - [Graveyard Bloom REP](https://github.com/isyvanenko/Graveyard_Bloom.git)
 - [Example Build Link](https://perisinch.itch.io/graveyard-bloom)
 
